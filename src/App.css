@@ -1,0 +1,238 @@
+/*======== VARIABLES CSS ========*/
+:root {
+  --header-height: 4rem;
+
+  /*====== Colors ======*/
+  --title-color: #ffffff;       /* Başlık ve yazılar beyaz */
+  --title-color-dark: #e0e0e0;  /* Hover renkleri */
+  --text-color: #ffffff;        /* Genel metin beyaz */
+  --body-color: #001f3f;        /* Arka plan lacivert */
+  --container-color: #001f3f;   /* Container lacivert */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(0, 0, 0, 0.3);
+  --scrollbar-thumb: #2c3e50;
+  --scrollbar-track: #001f3f;
+  --header-color: #001f3f;
+  --works-button-color: #ffffff;
+  --works-text-color: #ffffff;
+
+  /*===== Font & Typography ======*/
+  --body-font: 'BlinkMacSystemFont', sans-serif;
+
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  /*======= Font Weight =======*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /*===== z-index =====*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*======== GLOBAL STYLES ========*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  background-color: var(--body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--title-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--title-color-dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--body-font);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*======== Reusable Classes ========*/
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 6rem 0 2rem;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--title-color);
+  color: var(--body-color);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: var(--font-medium);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: var(--title-color-dark);
+}
+
+.button-icon {
+  margin-left: 0.5rem;
+}
+
+.button-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*======== FOOTER ========*/
+.footer {
+  background-color: var(--body-color);
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-container {
+  padding: 2rem 1rem 4rem;
+}
+
+.footer-copy {
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-social-link {
+  background-color: #ffffff;
+  color: var(--body-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom: Sosyal İkonlar yukarı, Designed by aşağı */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* icon ve yazı arası */
+  margin-top: 2rem;
+}
+
+/*======== MEDIA QUERIES ========*/
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .button {
+    padding: 1rem 1.75rem;
+  }
+
+  .footer-social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-container {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .footer-copy {
+    margin-top: 1rem;
+  }
+}
+

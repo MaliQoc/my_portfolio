@@ -1,0 +1,93 @@
+.footer {
+    background-color: #000000; /* Tam siyah */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Hafif beyaz çizgi */
+    padding-bottom: 1rem; /* footer alt boşluğu */
+}
+
+.footer-container {
+    padding: 2rem 0 0; /* üst padding */
+}
+
+.footer-title,
+.footer-link,
+.footer-copy {
+    color: #ffffff; /* Beyaz yazılar */
+}
+
+.footer-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
+}
+
+.footer-social-link {
+    background-color: #ffffff; /* Beyaz çerçeve */
+    color: #001f3f; /* ikon rengi lacivert */
+    font-size: 1.5rem; /* ikon boyutu büyütüldü */
+    width: 55px;  /* ikon kutusu büyütüldü */
+    height: 55px; /* ikon kutusu büyütüldü */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+    background-color: #e0e0e0; /* hover arka planı açık gri */
+    color: #001f3f; /* ikon rengi lacivert kalır */
+    transform: scale(1.1);
+}
+
+
+/* Footer Bottom: Sosyal ikonlar üstte, yazı aşağıda */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* ikonlar yukarı, yazı aşağı */
+    align-items: center;
+    gap: 0.5rem; /* ikon ile yazı arası boşluk */
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom .footer-copy {
+    margin: 0;
+    font-size: var(--smaller-font-size);
+    padding-top: 0.5rem; /* ikonların hemen altında yazı */
+}
+
+.footer-bottom .footer-social {
+    margin-bottom: 0;
+}
+
+/* Responsive ayarlar */
+@media screen and (max-width: 992px) {
+    .footer-social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer-container {
+        padding: 2rem 0 0;
+    }
+
+    .footer-copy {
+        padding-top: 0.5rem;
+    }
+
+    .footer-list {
+        margin-bottom: 1rem;
+    }
+}

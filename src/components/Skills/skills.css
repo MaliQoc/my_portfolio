@@ -1,0 +1,88 @@
+/* Sayfa genel ayarları */
+body {
+    background-color: #001f3f; /* Lacivert arka plan */
+    color: #ffffff; /* Yazılar beyaz */
+}
+
+/* Container arka planı ve çerçeve (büyük kutu lacivert) */
+.skills-content {
+    background-color: #001f3f; /* Lacivert arka plan */
+    border: 1px solid #ffffff; /* Beyaz çerçeve */
+    padding: 2rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Skills başlığı */
+.skills-title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills box düzeni */
+.skills-box {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem; /* Çerçeveler arası boşluk */
+    flex-wrap: wrap; /* Dar ekranda alt satıra geçmesini sağlar */
+}
+
+/* Grup düzeni */
+.skills-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+/* Küçük kutular (skills verisi) - içi siyah, çerçeve beyaz */
+.skills-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey ortala */
+    align-items: center;     /* Yatay ortala */
+    padding: 1rem;
+    border: 1px solid #ffffff; /* Beyaz çerçeve */
+    border-radius: 1rem;
+    background-color: #000000; /* İç siyah */
+    min-width: 120px; /* Çerçeve genişliği */
+    min-height: 80px; /* Dikeyde yeterli alan için */
+    text-align: center; /* Yazıyı ortala */
+}
+
+/* Skills isim ve seviye */
+.skills-name {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    line-height: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.skills-level {
+    font-size: var(--small-font-size);
+    color: #cccccc;
+}
+
+/* Responsive ayarlar */
+@media screen and (max-width: 992px) {
+    .skills-box {
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills-box {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .skills-data {
+        min-width: 100%;
+        max-width: 300px;
+    }
+}

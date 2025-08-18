@@ -1,0 +1,16 @@
+/* Genel Scroll Çubuğu Stilleri */
+::-webkit-scrollbar {
+    width: 12px; /* Scroll çubuğunun genişliği */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px; /* Thumb (kuyruk) yuvarlak kenarları */
+    background-color: var(--scrollbar-thumb); /* Default Thumb rengi */
+    border: 3px solid var(--scrollbar-track); /* Thumb etrafındaki sınır */
+  }
+  
+  /* Scroll çubuğunun track kısmı (arka plan) */
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track); /* Track rengi */
+    border-radius: 10px;
+  }

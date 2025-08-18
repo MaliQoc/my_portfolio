@@ -1,0 +1,223 @@
+/* ---------------- HOME CONTAINER ---------------- */
+.home-container {
+    row-gap: 7rem;
+}
+
+.home-content {
+    grid-template-columns: 116px repeat(2, 1fr);
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: -140px; /* sola kaydırma */
+}
+
+.home-social {
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+}
+
+.home-social-icon {
+    font-size: 3rem;
+    color: var(--title-color);
+    transition: 0.5s;
+}
+
+.home-social-icon:hover {
+    color: var(--title-color-dark);
+    transform: scale(1.5);
+}
+
+/* ---------------- HOME TEXT ---------------- */
+.home-title {
+    font-size: var(--big-font-size);
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.home-hand {
+    width: 38px;
+    height: 38px;
+    margin-left: 1rem;
+}
+
+.home-subtitle {
+    position: relative;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-normal);
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.home-description {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    line-height: 1.6;
+}
+
+/* ---------------- HOME IMAGE ---------------- */
+.home-img {
+    background: url("../../assets/profile.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+    width: 300px;
+    height: 300px;
+    order: 1;
+    justify-self: center;
+    animation: profile-animate 8s ease-in-out infinite 1s;
+    filter: grayscale(50%);
+}
+
+@keyframes profile-animate {
+    0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+}
+
+/* ---------------- SCROLL ---------------- */
+.home-scroll {
+    margin: 0 auto;
+    transform: translateX(-125px);
+}
+
+.wheel {
+    animation: scroll 2s ease infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(3.75rem); }
+}
+
+.home-scroll-name {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-right: 0.25rem;
+    margin-left: 2px;
+}
+
+.home-scroll-arrow {
+    font-size: 1.2rem;
+    color: var(--title-color);
+}
+
+/* ---------------- BUTTONS ---------------- */
+.home-data .button {
+    display: inline-flex;
+    justify-content: flex-end; /* desktop sağa yasla */
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+.home-data .button svg {
+    transition: 0.3s;
+}
+
+.home-data .button:hover svg {
+    transform: translateX(0.25rem); /* hover efekti */
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media screen and (max-width: 992px) {
+    .home-content {
+        grid-template-columns: 100px repeat(2, 1fr);
+        column-gap: 1.25rem;
+    }
+
+    .home-hand {
+        width: 26px;
+        height: 26px;
+    }
+
+    .home-subtitle {
+        padding-left: 3.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .home-description {
+        max-width: 95%;
+        margin-bottom: 2.5rem;
+    }
+
+    .home-img {
+        width: 250px;
+        height: 250px;
+        box-shadow: inset 0 0 0 8px rgb(255 255 255 / 30%);
+    }
+
+    .home-scroll {
+        margin-left: 7.5rem;
+    }
+
+    .home-data .button {
+        justify-content: center; /* responsive ortala */
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-content {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 3.5rem;
+    }
+
+    .home-social {
+        justify-content: center;
+    }
+
+    .home-subtitle {
+        left: -1.5rem;
+    }
+
+    .home-img {
+        order: initial;
+        justify-self: initial;
+        box-shadow: inset 0 0 0 6px rgb(255 255 255 / 30%);
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-data {
+        grid-column: 1/3;
+        text-align: center;
+    }
+
+    .home-scroll {
+        display: none;
+    }
+
+    .home-description {
+        max-width: 90%;
+        padding: 1rem 1.5rem;
+    }
+
+    .home-data .button {
+        justify-content: center; /* mobilde ortala */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-description {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .home-hand {
+        display: none;
+    }
+}
