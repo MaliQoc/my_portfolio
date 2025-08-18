@@ -1,17 +1,38 @@
+/* Sayfa iskeleti */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfa boyu kadar */
+}
+
+main {
+    flex: 1; /* İçerik uzarsa footer alta kayar */
+}
+
+/* Footer */
 .footer {
     background-color: #000000; /* Tam siyah */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Hafif beyaz çizgi */
-    padding-bottom: 1rem; /* footer alt boşluğu */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    width: 100%;
+    margin-top: auto; /* Her zaman en alta */
 }
 
 .footer-container {
-    padding: 2rem 0 0; /* üst padding */
+    padding: 2rem 0 0;
 }
 
 .footer-title,
 .footer-link,
 .footer-copy {
-    color: #ffffff; /* Beyaz yazılar */
+    color: #ffffff;
 }
 
 .footer-list {
@@ -20,6 +41,8 @@
     column-gap: 1.5rem;
     margin-bottom: 1rem;
     margin-left: 0;
+    padding-left: 0;
+    list-style: none;
 }
 
 .footer-social {
@@ -29,47 +52,47 @@
 }
 
 .footer-social-link {
-    background-color: #ffffff; /* Beyaz çerçeve */
-    color: #001f3f; /* ikon rengi lacivert */
-    font-size: 1.5rem; /* ikon boyutu büyütüldü */
-    width: 55px;  /* ikon kutusu büyütüldü */
-    height: 55px; /* ikon kutusu büyütüldü */
+    background-color: #ffffff;
+    color: #001f3f;
+    font-size: 1.5rem;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
 .footer-social-link:hover {
-    background-color: #e0e0e0; /* hover arka planı açık gri */
-    color: #001f3f; /* ikon rengi lacivert kalır */
+    background-color: #e0e0e0;
+    color: #001f3f;
     transform: scale(1.1);
 }
 
-
-/* Footer Bottom: Sosyal ikonlar üstte, yazı aşağıda */
+/* Footer Bottom */
 .footer-bottom {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* ikonlar yukarı, yazı aşağı */
+    justify-content: flex-end;
     align-items: center;
-    gap: 0.5rem; /* ikon ile yazı arası boşluk */
+    gap: 0.5rem;
     margin-top: 2rem;
     text-align: center;
 }
 
 .footer-bottom .footer-copy {
     margin: 0;
-    font-size: var(--smaller-font-size);
-    padding-top: 0.5rem; /* ikonların hemen altında yazı */
+    font-size: 0.875rem;
+    padding-top: 0.5rem;
 }
 
 .footer-bottom .footer-social {
     margin-bottom: 0;
 }
 
-/* Responsive ayarlar */
+/* Responsive */
 @media screen and (max-width: 992px) {
     .footer-social-link {
         width: 40px;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./header.css";
-import Logo from "../../assets/logo.jpeg"; // Logo yolu
-import TurkeyFlag from "../../assets/turkey-flag.jpg"; // Türk bayrağı yolu
+import Logo from "../../assets/logo.jpeg";
+import TurkeyFlag from "../../assets/turkey-flag.jpg";
 
 export default function Header() {
   const [Toggle, showMenu] = useState(false);
@@ -16,7 +16,9 @@ export default function Header() {
 
         {/* Orta yazı */}
         <div className="header-center-text">
-          <p>Victory belongs to those who can say, &quot;Victory is mine.&quot;</p>
+          <p>
+            Victory belongs to those who can say, &quot;Victory is mine.&quot;
+          </p>
           <span>Mustafa Kemal ATATÜRK</span>
         </div>
 
@@ -41,7 +43,10 @@ export default function Header() {
             </li>
           </ul>
 
-          <i className="uil uil-times nav-close" onClick={() => showMenu(!Toggle)}></i>
+          <i
+            className="uil uil-times nav-close"
+            onClick={() => showMenu(!Toggle)}
+          ></i>
         </div>
 
         {/* Mobil toggle */}

@@ -72,6 +72,11 @@
         border-top-right-radius: 0.5rem;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Logo sola */
+        position: relative;
     }
 
     .nav-menu {
@@ -133,28 +138,6 @@
     font-weight: 500;
 }
 
-
-/* Responsive ayarlar */
-@media screen and (max-width: 768px) {
-    .header-center-text p {
-        font-size: 0.9rem;
-    }
-
-    .header-center-text span {
-        font-size: 0.75rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header-center-text p {
-        font-size: 0.8rem;
-    }
-
-    .header-center-text span {
-        font-size: 0.7rem;
-    }
-}
-
 /* Türk bayrağı sağa hizalı ve yuvarlak */
 .nav-flag {
     width: 50px;        /* Bayrak boyutu */
@@ -169,4 +152,84 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ===================== MOBILE RESPONSIVE ===================== */
+@media screen and (max-width: 768px) {
+    .header {
+        top: initial;
+        bottom: 0;
+        box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0.5rem 1rem;
+        position: relative;
+        display: block; /* LOGO ve yazı çakışmasın */
+    }
+
+    /* Logo sola sabit */
+    .logo-img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%); /* Dikey ortala */
+    }
+
+    /* Ortadaki yazı tam ortaya */
+    .header-center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .header-center-text p {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .header-center-text span {
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
+    }
+
+    /* Bayrak sağda */
+    .nav-flag {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-center-text p {
+        font-size: 0.75rem;
+    }
+
+    .header-center-text span {
+        font-size: 0.65rem;
+    }
+
+    .nav-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .nav-flag {
+        width: 35px;
+        height: 35px;
+    }
 }
