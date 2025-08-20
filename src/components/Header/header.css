@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
-    background-color: #0a0a0a; /* Siyah arka plan */
+    background-color: #090a15; /* Siyah arka plan */
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
     border-bottom-right-radius: 0.5rem; /* Hafif kavis */
     border-bottom-left-radius: 0.5rem;

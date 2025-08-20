@@ -1,12 +1,12 @@
 /* Sayfa genel ayarları */
 body {
-    background-color: #00162d; /* Lacivert arka plan */
+    background-color: #051021; /* Lacivert arka plan */
     color: #ffffff; /* Yazılar beyaz */
 }
 
 /* Container arka planı ve çerçeve (büyük kutu lacivert) */
 .skills-content {
-    background-color: #00162d; /* Lacivert arka plan */
+    background-color: #090a15; /* Lacivert arka plan */
     border: 1px solid #ffffff; /* Beyaz çerçeve */
     padding: 2rem;
     border-radius: 1.2rem;
