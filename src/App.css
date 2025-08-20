@@ -6,13 +6,13 @@
   --title-color: #ffffff;       /* Başlık ve yazılar beyaz */
   --title-color-dark: #e0e0e0;  /* Hover renkleri */
   --text-color: #ffffff;        /* Genel metin beyaz */
-  --body-color: #001f3f;        /* Arka plan lacivert */
-  --container-color: #001f3f;   /* Container lacivert */
+  --body-color: #00162d;        /* Arka plan lacivert */
+  --container-color: #00162d;   /* Container lacivert */
   --shadow-color: rgba(0, 0, 0, 0.1);
   --border-color: rgba(0, 0, 0, 0.3);
   --scrollbar-thumb: #2c3e50;
-  --scrollbar-track: #001f3f;
-  --header-color: #001f3f;
+  --scrollbar-track: #00162d;
+  --header-color: #00162d;
   --works-button-color: #ffffff;
   --works-text-color: #ffffff;
 

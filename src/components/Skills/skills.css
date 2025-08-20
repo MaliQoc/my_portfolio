@@ -1,12 +1,12 @@
 /* Sayfa genel ayarları */
 body {
-    background-color: #001f3f; /* Lacivert arka plan */
+    background-color: #00162d; /* Lacivert arka plan */
     color: #ffffff; /* Yazılar beyaz */
 }
 
 /* Container arka planı ve çerçeve (büyük kutu lacivert) */
 .skills-content {
-    background-color: #001f3f; /* Lacivert arka plan */
+    background-color: #00162d; /* Lacivert arka plan */
     border: 1px solid #ffffff; /* Beyaz çerçeve */
     padding: 2rem;
     border-radius: 1.2rem;
@@ -23,12 +23,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Skills box düzeni */
+/* Skills box düzeni - Grid ile otomatik sütunlar */
 .skills-box {
-    display: flex;
-    justify-content: center;
-    column-gap: 2rem; /* Çerçeveler arası boşluk */
-    flex-wrap: wrap; /* Dar ekranda alt satıra geçmesini sağlar */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* ekran genişliğine göre otomatik sütun */
+    gap: 1.5rem; /* kutular arası boşluk */
+    width: 100%; /* kutuların containerı doldurmasını sağla */
+    justify-items: center; /* kutuları ortala */
 }
 
 /* Grup düzeni */
@@ -48,7 +49,7 @@ body {
     border: 1px solid #ffffff; /* Beyaz çerçeve */
     border-radius: 1rem;
     background-color: #000000; /* İç siyah */
-    min-width: 120px; /* Çerçeve genişliği */
+    min-width: 120px; /* Minimum kutu genişliği */
     min-height: 80px; /* Dikeyde yeterli alan için */
     text-align: center; /* Yazıyı ortala */
 }
@@ -67,20 +68,7 @@ body {
 }
 
 /* Responsive ayarlar */
-@media screen and (max-width: 992px) {
-    .skills-box {
-        column-gap: 1.5rem;
-        row-gap: 1rem;
-    }
-}
-
 @media screen and (max-width: 576px) {
-    .skills-box {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1rem;
-    }
-
     .skills-data {
         min-width: 100%;
         max-width: 300px;
