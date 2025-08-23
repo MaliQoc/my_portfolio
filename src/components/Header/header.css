@@ -95,10 +95,12 @@
         bottom: 0;
     }
 
+    /* SABİT GRID – HER ZAMAN 4 SÜTUN */
     .nav-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        justify-items: center;
     }
 
     .nav-icon,
@@ -223,8 +225,9 @@
         font-size: 0.65rem;
     }
 
+    /* Küçük ekranlarda da 4 sütun sabit */
     .nav-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
     }
 
