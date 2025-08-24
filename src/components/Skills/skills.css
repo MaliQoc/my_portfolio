@@ -1,238 +1,91 @@
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: var(--z-fixed);
-    background-color: #090a15; /* Siyah arka plan */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
-    border-bottom-right-radius: 0.5rem; /* Hafif kavis */
-    border-bottom-left-radius: 0.5rem;
+/* Sayfa genel ayarları */
+body {
+    background-color: #051021; /* Koyu lacivert arka plan */
+    color: #ffffff; /* Yazılar beyaz */
 }
 
-/* Logo header yüksekliğine tam oturacak ve yuvarlak olacak */
-.logo-img {
-    height: calc(var(--header-height) - 0.5rem); /* biraz boşluk bırak */
-    width: auto; /* Oran korunur */
-    object-fit: cover;
-    border-radius: 50%; /* Tam yuvarlak */
-}
-
-.nav {
-    height: var(--header-height);
+/* Container arka planı ve çerçeve (büyük kutu lacivert) */
+.skills-content {
+    background-color: #090a15; /* Koyu lacivert arka plan */
+    border: 1px solid #ffffff; /* Beyaz çerçeve */
+    padding: 2rem;
+    border-radius: 1.2rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    column-gap: 1rem;
 }
 
-.nav-logo,
-.nav-toggle {
-    color: #ffffff; /* Beyaz yazı */
+/* Skills başlığı */
+.skills-title {
+    font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.nav-list {
+/* Skills box düzeni */
+.skills-box {
     display: flex;
-    column-gap: 2rem;
-    align-items: center;
+    justify-content: center;
+    column-gap: 2rem; /* Çerçeveler arası boşluk */
+    flex-wrap: wrap; /* Dar ekranda alt satıra geçmesini sağlar */
 }
 
-.nav-link {
+/* Grup düzeni */
+.skills-group {
     display: flex;
-    align-items: center; /* Yazı ve ikon yan yana */
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+/* Küçük kutular (skills verisi) - içi siyah, çerçeve beyaz */
+.skills-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey ortala */
+    align-items: center;     /* Yatay ortala */
+    padding: 1rem;
+    border: 1px solid #ffffff; /* Beyaz çerçeve */
+    border-radius: 1rem;
+    background-color: #000000; /* İÇ SİYAH */
+    min-width: 120px; /* Çerçeve genişliği */
+    min-height: 80px; /* Dikeyde yeterli alan için */
+    text-align: center; /* Yazıyı ortala */
+}
+
+/* Skills isim ve seviye */
+.skills-name {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    line-height: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.skills-level {
     font-size: var(--small-font-size);
-    color: #ffffff;
-    font-weight: var(--font-medium);
-    transition: 0.3s;
+    color: #cccccc;
 }
 
-.nav-link i {
-    margin-right: 0.5rem; /* İkon ile yazı arası boşluk */
-}
-
-.nav-close,
-.nav-icon,
-.nav-toggle {
-    display: none;
-}
-
-.active-link,
-.nav-link:hover {
-    color: #cccccc; /* Hover rengi */
-}
-
-/* ===== BREAKPOINTS ===== */
-@media screen and (max-width: 768px) {
-    .header {
-        top: initial;
-        bottom: 0;
-        box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        padding: 0.5rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; /* Logo sola */
-        position: relative;
+/* Responsive ayarlar */
+@media screen and (max-width: 992px) {
+    .skills-box {
+        column-gap: 1.5rem;
+        row-gap: 1rem;
     }
+}
 
-    .nav-menu {
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: #0a0a0a !important; /* Siyah mobil menü */
-        padding: 2rem 1.5rem;
-        box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
-        border-radius: 0.5rem 0.5rem 0 0;
-        transition: 0.3s;
-    }
-
-    .show-menu {
-        bottom: 0;
-    }
-
-    /* SABİT GRID – HER ZAMAN 4 SÜTUN */
-    .nav-list {
-        display: grid;
+@media screen and (max-width: 576px) {
+    /* SABİT GRID – HER TELEFONDA 4 SÜTUN */
+    .skills-box {
+        display: grid !important;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        gap: 1rem;
         justify-items: center;
     }
 
-    .nav-icon,
-    .nav-close,
-    .nav-toggle {
-        display: block;
-        color: #ffffff; /* Beyaz ikonlar */
-    }
-
-    .nav-close:hover {
-        color: #cccccc;
-    }
-}
-
-/* Header ortasındaki yazı */
-.header-center-text {
-    position: absolute;
-    top: 50%;
-    left: 48%; /* 50% -> 48% ile biraz sola kaydırdık */
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ffffff;
-    pointer-events: none; /* Menü üzerine tıklamayı engeller */
-    width: 90%; /* Mobilde taşmayı önler */
-}
-
-.header-center-text p {
-    font-size: 1rem; /* Ana söz boyutu */
-    margin: 0;
-    line-height: 1.4;
-}
-
-.header-center-text span {
-    display: block;
-    font-size: 0.85rem; /* Alt yazı boyutu */
-    margin-top: 0.25rem;
-    font-weight: 500;
-}
-
-/* Türk bayrağı sağa hizalı ve yuvarlak */
-.nav-flag {
-    width: 50px;        /* Bayrak boyutu */
-    height: 50px;
-    border-radius: 50%; /* Yuvarlak */
-    margin-left: 1rem;  /* Yazıdan uzaklığı artırdık */
-    object-fit: cover;
-    vertical-align: middle;
-}
-
-.nav-flag img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ===================== MOBILE RESPONSIVE ===================== */
-@media screen and (max-width: 768px) {
-    .header {
-        top: initial;
-        bottom: 0;
-        box-shadow: 0 -1px 4px rgba(0,0,0,0.3);
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        padding: 0.5rem 1rem;
-        position: relative;
-        display: block; /* LOGO ve yazı çakışmasın */
-    }
-
-    /* Logo sola sabit */
-    .logo-img {
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 1rem;
-        transform: translateY(-50%); /* Dikey ortala */
-    }
-
-    /* Ortadaki yazı tam ortaya */
-    .header-center-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 70%;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .header-center-text p {
-        font-size: 0.8rem;
-        line-height: 1.2;
-    }
-
-    .header-center-text span {
-        font-size: 0.65rem;
-        margin-top: 0.2rem;
-    }
-
-    /* Bayrak sağda */
-    .nav-flag {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header-center-text p {
-        font-size: 0.75rem;
-    }
-
-    .header-center-text span {
-        font-size: 0.65rem;
-    }
-
-    /* Küçük ekranlarda da 4 sütun sabit */
-    .nav-list {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-    }
-
-    .nav-flag {
-        width: 35px;
-        height: 35px;
+    .skills-data {
+        min-width: auto; /* genişliği grid yönetsin */
+        max-width: none;
+        width: 100%;
     }
 }
