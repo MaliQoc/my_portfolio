@@ -75,12 +75,12 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-    /* SABİT GRID – HER TELEFONDA 4 SÜTUN */
+    /* SABİT GRID – MOBİLDE 2 SÜTUN ORTALI */
     .skills-box {
         display: grid !important;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun */
         gap: 1rem;
-        justify-items: center;
+        justify-items: center; /* Ortalı */
     }
 
     .skills-data {
