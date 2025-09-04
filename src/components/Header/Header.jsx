@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./header.css";
-import Logo from "../../assets/logo.jpeg";
+import Logo from "../../assets/2.jpg";
 import TurkeyFlag from "../../assets/turkey-flag.jpg";
 
 export default function Header() {
